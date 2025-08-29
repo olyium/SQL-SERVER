@@ -23,7 +23,7 @@ async def EDP(request: Request) -> dict:
             if DB_NAME == None:
                 raise classes.DBNameInvalid
             
-            EDP_REQUEST = functions.CREATE(SQL_DATA, DB_NAME, ROOT)
+            EDP_REQUEST = functions.EDP(SQL_DATA, DB_NAME, ROOT)
 
             return EDP_REQUEST
 
@@ -34,4 +34,4 @@ async def EDP(request: Request) -> dict:
     
     except Exception as E:
 
-        return {'ERROR': E}
+        return {'ERROR': str(E)}
